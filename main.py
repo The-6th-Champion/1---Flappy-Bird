@@ -12,7 +12,7 @@ def create_pipe():
 
 def move_pipes(pipes):
     for pipe in pipes:
-        pipe.centerx -= 2.5
+        pipe.centerx -= 1.25
     return pipes    
 
 def draw_pipes(pipes):
@@ -22,6 +22,14 @@ def draw_pipes(pipes):
         else:
             flip_pipe = pygame.transform.flip(pipe_surface,False,True)
             screen.blit(flip_pipe,pipe)
+def check_collision(pipes):
+    for pipe in pipes:
+        if bird_rect.colliderect(pipe):
+            return False
+    if bird_rect.top <= -50 or bird_rect.bottom >= 450:
+        return 
+        
+    return True
 
 pygame.init()
 screen = pygame.display.set_mode((288,512))
@@ -30,6 +38,7 @@ clock = pygame.time.Clock()
 # Game Variables
 gravity = 0.125
 bird_movement = 0
+game_active = True
 
 bg_surface = pygame.image.load('assets/background-day.png').convert()
 
@@ -61,14 +70,16 @@ while True:
 
     screen.blit(bg_surface,(0,0))
 
-    # Bird movement
-    bird_movement += gravity
-    bird_rect.centery += bird_movement
-    screen.blit(bird_surface,bird_rect)
+    if game_active:
+        # Bird movement
+        bird_movement += gravity
+        bird_rect.centery += bird_movement
+        screen.blit(bird_surface,bird_rect)
+        game_active = check_collision(pipe_list)
 
-    # Pipes
-    pipe_list = move_pipes(pipe_list)
-    draw_pipes(pipe_list)
+        # Pipes
+        pipe_list = move_pipes(pipe_list)
+        draw_pipes(pipe_list)
 
     floor_x_pos -= 1
     draw_floor()
@@ -78,3 +89,25 @@ while True:
 
     pygame.display.update()
     clock.tick(120)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    # if you scrolled here take some cookies 🍪🍪🍪🍪🍪
