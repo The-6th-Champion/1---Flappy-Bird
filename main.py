@@ -129,7 +129,7 @@ while True:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE and game_active:
                 bird_movement = 0
-                bird_movement -= 6
+                bird_movement -= 6 #this is the spot you edit
                 flap_sound.play()
             if event.key == pygame.K_SPACE and game_active == False:
                 game_active = True
