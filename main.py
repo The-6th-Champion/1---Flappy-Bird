@@ -197,5 +197,3 @@ while True:
 
 
 
-
-    # if you scrolled here take some cookies 🍪🍪🍪🍪🍪
