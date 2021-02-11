@@ -35,4 +35,4 @@ Here are some things you may want to try:
    change the `6` to something bigger or smaller to make your jumps bigger or smaller
 2. Bird Color
   - To Be added :)
-> Note: This was made using [this](https://youtu.be/qJ94sSyPGBw, "Learning pygame by making Flappy Bird By Clear Code") tutorial from youtube
+> Note: This was made using [this](https://www.youtube.com/watch?v=UZg49z76cLw, "Learning pygame by making Flappy Bird By Clear Code") tutorial from youtube
